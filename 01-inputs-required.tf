@@ -88,7 +88,7 @@ variable "aks_role_definition" {
   description = "Role definition for AKS version checker"
 }
 
-variable "aks_mi" {
+variable "aks_mi_resource_group_name" {
   description = "The ID of the User Assigned Identity"
   type        = string
 }
