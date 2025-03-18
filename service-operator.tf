@@ -3,6 +3,6 @@ resource "azurerm_federated_identity_credential" "service_operator_credential" {
   resource_group_name       = var.resource_group_name
   issuer                    = azurerm_kubernetes_cluster.kubernetes_cluster.oidc_issuer_url
   audience                  = ["api://AzureADTokenExchange"]
-  parent_id                 = data.azurerm_user_assigned_identity.aks.id
+  parent_id                 = var.aks_mi
   subject                   = "system:serviceaccount:azureserviceoperator-system:azureserviceoperator-default"
 }
