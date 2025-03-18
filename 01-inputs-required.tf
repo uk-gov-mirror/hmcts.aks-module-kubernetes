@@ -87,3 +87,8 @@ variable "aks_role_definition" {
   default     = "Reader"
   description = "Role definition for AKS version checker"
 }
+
+variable "aks_mi" {
+  description = "The ID of the User Assigned Identity"
+  type        = string
+}
