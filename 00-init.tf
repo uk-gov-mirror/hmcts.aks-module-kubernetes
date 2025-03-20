@@ -10,4 +10,11 @@ terraform {
       version = "1.15.0"
     }
   }
+
+ # Configure retry settings
+  retry {
+    max_attempts = 5
+    min_delay    = 10
+    max_delay    = 60
+  }
 }
