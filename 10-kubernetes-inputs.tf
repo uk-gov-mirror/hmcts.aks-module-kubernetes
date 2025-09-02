@@ -126,7 +126,7 @@ variable "cost_analysis_enabled" {
 
 variable "azure_policy_enabled" {
   description = "Enable the Azure Policy addon"
-  default     = false
+  default     = true
 }
 
 variable "node_os_maintenance_window_config" {
