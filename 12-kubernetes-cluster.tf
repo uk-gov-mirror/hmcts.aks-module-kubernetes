@@ -188,7 +188,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "additional_node_pools" {
   os_type               = lookup(each.value, "os_type", "Linux")
   # A temporary change to set the os_sku as "AzureLinux" for the new azurelinux node pool only
   # Allowing os_sku to be set via variable for Windows node pools as well - 2019 is deprecated on AKS 1.33+
-  os_sku                  = each.value.name == "azurelinux" ? try(each.value.os_sku, "AzureLinux") : each.value.name == "windows" ? try(each.value.os_sku, null) : null
+  os_sku                  = each.value.name == "azurelinux" ? try(each.value.os_sku, "AzureLinux") : each.value.name == "msnode" ? try(each.value.os_sku, null) : null
   os_disk_type            = "Ephemeral"
   eviction_policy         = each.value.name == "spotinstance" ? try(each.value.eviction_policy, "Delete") : null
   node_taints             = each.value.node_taints
